@@ -1,0 +1,218 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--BackgroundColor);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MOBILE PATTERN STYLE */
+.pattern {
+    background: url(../images/bg-mobile.png) no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    gap: 2rem;
+
+    font-family: "Raleway", sans-serif;
+    color: var(--SecondaryColor);
+    font-size: var(--MainFontSize);
+}
+
+/* CARD 1 */
+.fylo {
+    max-width: 37.5rem;
+    width: 100%;
+    background-color: var(--CardColor);
+    padding: 4rem;
+    border-radius: 1rem 10rem 1rem 1rem;
+}
+.fylo .header {
+    width: 12rem;
+    margin-bottom: 4rem;
+}
+.fylo .header .logo {
+    width: 100%;
+    display: block;
+    transition: .2s ease-in-out;
+}
+.fylo .header .logo:hover {
+    transform: scale(1.01);
+}
+.fylo .icon-section {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+.fylo .icon-section .icon {
+    background-color: var(--BackgroundColor);
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+}
+.fylo .icon-section .icon:hover {
+    transform: scale(1.1);
+}
+
+
+/* CARD 2 */
+.download-section {
+    background-color: var(--CardColor);
+    max-width: 37.5rem;
+    width: 100%;
+    height: 16rem;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.download-section .description span{
+    font-weight: 700;
+}
+.download-section .progress-bar {
+    background-color: var(--BackgroundColor);
+    width: 100%;
+    height: fit-content;
+    border: 0.2rem solid var(--BackgroundColor);
+    border-radius: 1.2rem;
+}
+.download-section .progress-bar .progress {
+    background: linear-gradient(to right, var(--GradientColor1), var(--GradientColor2));
+    display: block;
+    width: 70%;
+    height: 1.2rem;
+    border-radius: 0.6rem;
+    position: relative;
+}
+.download-section .progress-bar .progress::after {
+    content: '';
+    background-color: #fff;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+}
+.download-section .progress-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 700;
+}
+.download-section .balloon{
+    background-color: var(--BalloonColor);
+    color: var(--BaloonFontColor);
+    position: relative;
+    bottom: -1.5rem;    
+    padding: 2rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.download-section .balloon span {
+    font-size: 3.4rem;
+    color: var(--BackgroundColor);
+    margin-right: 0.6rem;
+}
+
+
+
+/* FOOTER */
+.attribution { 
+    margin-top: 5rem;
+    font-size: 1.1rem; 
+    text-align: center; 
+    color: var(--SecondaryColor);
+}
+.attribution a { 
+    color: hsl(228, 80%, 76%); 
+}
+
+
+
+/* RESPONSIVITY */
+@media (min-width: 950px) {
+    /* DESKTOP PATTERN STYLE */
+    .pattern {
+        background: url(../images/bg-desktop.png) no-repeat top left;
+        width: 100%;
+        height: 52vh;
+        background-size: cover;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+    .download-section {
+        align-self: flex-end;
+        padding: var(--DefaultPadding);
+        max-width: 60rem;
+    }
+    .download-section .description{
+        align-self: flex-start;
+    }
+    .download-section .progress-bar .progress {
+        width: 78%;
+    }
+    .download-section .balloon{
+        position: absolute;
+        height: fit-content;
+        top: calc(-4rem - 2rem);
+        right: var(--DefaultPadding);  
+        padding: 2rem 3rem;
+        border-bottom-right-radius: 0;  
+    }
+    .download-section .balloon::after{
+        --triangle: 1.5rem;
+
+        content: '';
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+        border: var(--triangle) solid transparent;
+        border-top: var(--triangle) solid var(--BalloonColor);
+        border-right: var(--triangle) solid var(--BalloonColor);
+        position: absolute;
+        right: 0;
+        bottom: calc(0px - var(--triangle));
+    }
+    .attribution { 
+        margin-top: 0;
+    }
+}

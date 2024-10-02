@@ -1,0 +1,24 @@
+:root {
+    /* ## Colors */
+
+    /* ProgressBar */
+    --GradientColor1: hsl(6, 100%, 80%);
+    --GradientColor2: hsl(335, 100%, 65%);
+
+    --BalloonColor: hsl(0, 0%, 100%);
+    --SecondaryColor: hsl(243, 100%, 93%);
+    --BaloonFontColor: hsl(229, 7%, 55%);
+    --CardColor: hsl(228, 56%, 26%);
+    --BackgroundColor: hsl(229, 57%, 11%);
+
+    /* ## Typography */
+
+    /* ### Body Copy */
+
+    --MainFontSize: 14px;
+
+
+    /* ## Spacing */
+    --DefaultPadding: 4rem;
+
+}
